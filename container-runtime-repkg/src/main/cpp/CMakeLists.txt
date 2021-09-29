@@ -8,7 +8,6 @@ ENABLE_LANGUAGE(ASM)
 set(LIBRARY_NAME ${LIB_NAME})
 
 
-
 set(RATEL_NATIVE_SOURCE
         Jni/VAJni.cpp
         Jni/Helper.cpp
@@ -118,3 +117,47 @@ set(HIDDEN_NATIVE_SOURCE
 add_library("ratelhide" SHARED ${HIDDEN_NATIVE_SOURCE})
 
 target_link_libraries("ratelhide" log)
+
+include_directories(zipalign)
+include_directories(zipalign/base/include)
+set(ZIP_ALIGN_SOURCE
+        zipalign/ZipAlign.cpp
+        zipalign/ZipEntry.cpp
+        zipalign/ZipFile.cpp
+        zipalign/utils/Errors.cpp
+        zipalign/utils/VectorImpl.cpp
+        zipalign/utils/SharedBuffer.cpp
+
+        zipalign/zopfli/deflate.c
+        zipalign/zopfli/util.c
+
+
+        zipalign/base/abi_compatibility.cpp
+        zipalign/base/chrono_utils.cpp
+        zipalign/base/cmsg.cpp
+        zipalign/base/errors_unix.cpp
+        zipalign/base/file.cpp
+        zipalign/base/liblog_symbols.cpp
+        zipalign/base/logging.cpp
+        zipalign/base/mapped_file.cpp
+        zipalign/base/parsebool.cpp
+        zipalign/base/parsenetaddress.cpp
+        zipalign/base/process.cpp
+        zipalign/base/properties.cpp
+        zipalign/base/stringprintf.cpp
+        zipalign/base/strings.cpp
+        zipalign/base/threads.cpp
+        # 这应该是为了适配windows的
+        #  zipalign/base/utf8.cpp
+
+        zipalign/ziparchive/zip_archive.cc
+#        zipalign/ziparchive/zip_archive_benchmark.cpp
+        zipalign/ziparchive/zip_archive_stream_entry.cc
+        zipalign/ziparchive/zip_writer.cc
+        zipalign/ziparchive/ziptool.cpp
+
+
+        )
+
+add_executable("zipalign" ${ZIP_ALIGN_SOURCE})
+target_link_libraries("zipalign" log)

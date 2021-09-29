@@ -76,7 +76,6 @@ public class SettingsActivity extends XposedBaseActivity {
 
         @Override
         public boolean onPreferenceClick(Preference preference) {
-
             return true;
         }
 

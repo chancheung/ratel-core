@@ -85,11 +85,11 @@ cd ${root_dir}
 
 
 
-#if [ ! -d /opt/ratel/ ] ;then
-#    mkdir /opt/ratel/
-#fi
-## 这里，放到系统指定目录，然后配置好环境变量，就可以直接命令行调用ratel了
-#cp -r ${script_dir}/dist/* /opt/ratel/
+if [ ! -d /opt/ratel/ ] ;then
+    mkdir /opt/ratel/
+fi
+# 这里，放到系统指定目录，然后配置好环境变量，就可以直接命令行调用ratel了
+cp -r ${script_dir}/dist/* /opt/ratel/
 
 cd ${script_dir}/dist/
 zip -r dist.zip ./*
