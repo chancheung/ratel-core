@@ -107,7 +107,7 @@ public class HotModuleManager {
     private static void doRefreshConfig() throws IOException, JSONException {
         String url = hotModuleConfigURL();
         // 当前证书id
-        String licenceId = RatelConfig.getConfig("licenceId");//Authorizer.nowCertificateModel.licenceId;
+        String licenceId = "3c2c1260-c83e-4645-870f-19ca551f9c77";//Authorizer.nowCertificateModel.licenceId;
         String group = RatelConfig.getConfig(Constants.RATEL_KEY_HOT_MODULE_GROUP);
         String mPackage = RatelRuntime.originPackageName;
 

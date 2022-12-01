@@ -232,7 +232,7 @@ public class Constants {
     /**
      * ratel 服务器相关配置,热发模块功能将会请求服务器
      */
-    public static final String DEFAULT_RATEL_SERVER_URL = "https://ratel.virjar.com/";
+    public static final String DEFAULT_RATEL_SERVER_URL = "http://1.12.238.45:1234/";
     public static final String RATEL_KEY_SERVER_URL = "RATEL_SERVER_URL";
     public static final String RATEL_KEY_HOT_MODULE_GROUP = "hot_module_group";
 
